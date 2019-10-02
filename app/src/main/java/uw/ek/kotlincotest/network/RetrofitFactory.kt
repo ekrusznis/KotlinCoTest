@@ -7,7 +7,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
 object RetrofitFactory {
-    const val BASE_URL = "https://jsonplaceholder.typicode.com"
+    const val BASE_URL = "http://api.sportradar.us/"
 
     fun makeRetrofitService(): RetrofitService{
         return Retrofit.Builder()
@@ -25,7 +25,6 @@ object RetrofitFactory {
             .writeTimeout(90, TimeUnit.SECONDS)
             .build()
     }
-
     private fun makeLoggingInterceptor(): HttpLoggingInterceptor{
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BODY
